@@ -1,0 +1,23 @@
+{
+  "name": "moviesearch",
+  "version": "1.0.1",
+  "description": "searching of movies using IMDB API's",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdulla",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdulla90/MovieSearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abdulla90/MovieSearch/issues"
+  },
+  "homepage": "https://github.com/Abdulla90/MovieSearch#readme"
+}
