@@ -9,6 +9,9 @@
 	<script type="text/javascript" src="js/lib/angular.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/controllers/movieControl.js"></script>
+	<script type="text/javascript" src="js/directives/dataLoadingDir.js"></script>
+	<script type="text/javascript" src="js/filters/sourceFilter.js"></script>
+	<script type="text/javascript" src="js/services/httpservices.js"></script>
 
 
 </head>
@@ -23,7 +26,7 @@
 			<form class="form">
 				<div class="form-group">
 					<div class="col-md-10">
- 						<input type="text" class="form-control"  name="msearch"  ng-model="movieSearch" placeholder="Enter movie">
+ 						<input type="text" class="form-control"  name="msearch"  ng-model="movieSearch.title" placeholder="Enter movie title">
  					</div>
  				</div> 				       
       				<div class="col-md-2">
@@ -31,10 +34,19 @@
       				</div>    			
 			</form>
 		</div>
-		<div class="container">
-
-
-		</div>
+		<div on-scrolling="loadMore()">
+            <div class="container" ng-repeat="movie in movieData">
+                <nav>
+                    <img ng-src="{{movie.Poster|srcfilter}}">
+                </nav>
+                <article>
+                    <h1>{{movie.Title}}</h1>
+                    <p>Type:{{movie.Type}}</p>
+                    <p>Year:{{movie.Year}}</p>
+                </article>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
 	</div>
 </body>
 </html>
